@@ -1,0 +1,62 @@
+.footer{
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    padding-block: 13px;
+    align-items: center;
+    @include tablet{
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  &__logos{
+    display: flex;
+    column-gap: 32px;
+    max-width: 500px;
+    width: 51%;
+    @include tablet{
+      width: 40%;
+    }
+    @include mobile{
+      align-items: center;
+      flex-direction: column;
+      row-gap: 25px;
+      width: auto;
+    }
+    &-cyberpunk{
+      width: 59%;
+      @include mobile{
+        width: 200px;
+        height: 50px;
+      }
+    }
+    &-cd_project{
+      width: 34.6%;
+      @include mobile{
+        width: 116.25px;
+        height: 50px;
+      }
+    }
+  }
+  &__link{
+    width: 387px;
+    display: flex;
+    column-gap: 32px;
+    @include mobile{
+      flex-direction: column;
+      margin-top: 32px;
+      row-gap: 15px;
+      width: auto;
+    }
+  }
+  &__bottom{
+    padding-block: 13px;
+    display: flex;
+    justify-content: center;
+
+    background:var(--color-dark);
+
+    color: var(--color-white);
+    font-size:12px;
+  }
+}
