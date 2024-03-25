@@ -1,0 +1,136 @@
+.header{
+  .swiper-first{
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      top: -100px;
+      width: 100%;
+      @include max-desktop{
+        width: 1440px;
+        left: calc((-1440px + 100%) / 2);
+      }
+      height: 1060px;
+      .swiper-slide{
+        display: flex;
+        justify-content: center;
+        img{
+            width: 100%;
+        }
+      }
+
+  }
+  &__inner{
+    height: 960px;
+    text-transform: uppercase;
+    color: var(--color-white);
+  }
+  &__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-title{
+      font-family: "Bebas Neue";
+      margin-top: 237px;
+      font-size: 72px;
+      line-height: 1;
+    }
+    &-subtitle{
+      font-family: "Bebas Neue";
+      font-weight: 700;
+      line-height: 1;
+    }
+    &-button{
+      margin-top: 28.5px;
+      color: var(--color-dark);
+      font-weight: 700;
+      background: var(--color-orange);
+      border-radius: 5px;
+      padding: 17.5px 17px;
+      @include fluid-text(16, 14);
+      @include hover{
+        transition: var(--transition-base);
+        background: var(--color-white);
+      }
+    }
+    &-scroll{
+      margin-top: 364px;
+      position: relative;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 22px;
+      padding-bottom: 8.2px;
+      cursor: pointer;
+      @include hover{
+        transition: var(--transition-base);
+        color: var(--color-orange);
+      }
+      .scroll-svg{
+        position:absolute;
+        bottom: 0;
+        left: calc((100% - 23px)/2);
+      }
+    }
+  }
+  &__menu{
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    &-logo{
+      @include square(55px);
+    }
+    &-links{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 32px;
+      flex: 1;
+
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 16.34px;
+      a{
+        @include hover{
+          color: var(--color-orange);
+          transition: var(--transition-base);
+        }
+      }
+    }
+    &-right{
+      align-items: center;
+      display: flex;
+      column-gap: 15px;
+    }
+    &-lang{
+      &-change{
+        background: initial;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16.34px;
+        color: var(--color-white);
+        border: none;
+        outline: none;
+      }
+    }
+    &-trait{
+      height: 30px;
+      width: 1px;
+      background: var(--color-white);
+    }
+    &-xbox{
+      cursor: pointer;
+      color: var(--color-orange);
+      @include hover{
+        transition: var(--transition-base);
+        color: var(--color-white);
+      }
+    }
+    &-steam{
+      cursor: pointer;
+      color: var(--color-orange);
+      @include hover{
+        transition: var(--transition-base);
+        color: var(--color-white);
+      }
+    }
+  }
+}

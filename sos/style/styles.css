@@ -1,0 +1,413 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("../fonts/BebasNeueBold.woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("../fonts/BebasNeue-Regular.woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/**
+  Нормализация блочной модели
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам,
+  у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам,
+  у которых есть атрибут class
+ */
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку,
+  у которого есть атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+/**
+  Обнуляем вертикальные внешние отступы параграфа,
+  объявляем локальную переменную для внешнего отступа вниз,
+  чтобы избежать взаимодействие с более сложным селектором
+ */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+/**
+  Внешний отступ вниз для параграфа без атрибута class,
+  который расположен не последним среди своих соседних элементов
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+  Упрощаем работу с изображениями
+ */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  height: 100%;
+  /**
+    Плавный скролл
+   */
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  min-height: 100%;
+  /**
+    Унифицированный интерлиньяж
+   */
+  line-height: 1.5;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+ */
+svg *[fill] {
+  fill: currentColor;
+}
+
+svg *[stroke] {
+  stroke: currentColor;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+  Удаляем все анимации и переходы для людей,
+  которые предпочитают их не использовать
+ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@media (max-width: 767px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .visible-mobile {
+    display: none !important;
+  }
+}
+
+:root {
+  --color-white: #FFFFFF;
+  --color-dark: #1A1917;
+  --color-orange: #FFB548;
+  --container-width: 1200px;
+  --container-padding-x: 15px;
+  --font-family-base: "Open Sans";
+  --transition-base: .3s;
+  --input-small-height: 44px;
+  --input-large-height: 60px;
+  --button-small-height: 44px;
+  --button-large-height: 60px;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.28;
+  color: var(--color-dark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-size: clamp(33px, 6.6666666667vw, 80px);
+}
+
+h2 {
+  font-size: clamp(21px, 3vw, 36px);
+}
+
+h3 {
+  font-size: clamp(21px, 2vw, 24px);
+}
+
+h4 {
+  font-size: clamp(18px, 2vw, 24px);
+}
+
+.header .swiper-first {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: -100px;
+  width: 100%;
+  height: 1060px;
+}
+@media (max-width: 1440px) {
+  .header .swiper-first {
+    width: 1440px;
+    left: calc((-1440px + 100%) / 2);
+  }
+}
+.header .swiper-first .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+.header .swiper-first .swiper-slide img {
+  width: 100%;
+}
+.header__inner {
+  height: 960px;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+.header__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header__content-title {
+  font-family: "Bebas Neue";
+  margin-top: 237px;
+  font-size: 72px;
+  line-height: 1;
+}
+.header__content-subtitle {
+  font-family: "Bebas Neue";
+  font-weight: 700;
+  line-height: 1;
+}
+.header__content-button {
+  margin-top: 28.5px;
+  color: var(--color-dark);
+  font-weight: 700;
+  background: var(--color-orange);
+  border-radius: 5px;
+  padding: 17.5px 17px;
+  font-size: clamp(14px, 1.3333333333vw, 16px);
+}
+@media (hover: hover) {
+  .header__content-button:hover {
+    transition: var(--transition-base);
+    background: var(--color-white);
+  }
+}
+@media (hover: none) {
+  .header__content-button:active {
+    transition: var(--transition-base);
+    background: var(--color-white);
+  }
+}
+.header__content-scroll {
+  margin-top: 364px;
+  position: relative;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 22px;
+  padding-bottom: 8.2px;
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .header__content-scroll:hover {
+    transition: var(--transition-base);
+    color: var(--color-orange);
+  }
+}
+@media (hover: none) {
+  .header__content-scroll:active {
+    transition: var(--transition-base);
+    color: var(--color-orange);
+  }
+}
+.header__content-scroll .scroll-svg {
+  position: absolute;
+  bottom: 0;
+  left: calc((100% - 23px) / 2);
+}
+.header__menu {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+}
+.header__menu-logo {
+  width: 55px;
+  aspect-ratio: 1;
+}
+.header__menu-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 32px;
+  flex: 1;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16.34px;
+}
+@media (hover: hover) {
+  .header__menu-links a:hover {
+    color: var(--color-orange);
+    transition: var(--transition-base);
+  }
+}
+@media (hover: none) {
+  .header__menu-links a:active {
+    color: var(--color-orange);
+    transition: var(--transition-base);
+  }
+}
+.header__menu-right {
+  align-items: center;
+  display: flex;
+  column-gap: 15px;
+}
+.header__menu-lang-change {
+  background: initial;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16.34px;
+  color: var(--color-white);
+  border: none;
+  outline: none;
+}
+.header__menu-trait {
+  height: 30px;
+  width: 1px;
+  background: var(--color-white);
+}
+.header__menu-xbox {
+  cursor: pointer;
+  color: var(--color-orange);
+}
+@media (hover: hover) {
+  .header__menu-xbox:hover {
+    transition: var(--transition-base);
+    color: var(--color-white);
+  }
+}
+@media (hover: none) {
+  .header__menu-xbox:active {
+    transition: var(--transition-base);
+    color: var(--color-white);
+  }
+}
+.header__menu-steam {
+  cursor: pointer;
+  color: var(--color-orange);
+}
+@media (hover: hover) {
+  .header__menu-steam:hover {
+    transition: var(--transition-base);
+    color: var(--color-white);
+  }
+}
+@media (hover: none) {
+  .header__menu-steam:active {
+    transition: var(--transition-base);
+    color: var(--color-white);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

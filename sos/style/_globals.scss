@@ -1,0 +1,26 @@
+body{
+  font-family: var(--font-family-base);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.28;
+
+  color: var(--color-dark);
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+h1{
+  @include fluid-text(80, 33)
+}
+h2{
+  @include fluid-text(36, 21)
+}
+h3{
+  @include fluid-text(24, 21);
+}
+h4{
+  @include fluid-text(24, 18);
+}
