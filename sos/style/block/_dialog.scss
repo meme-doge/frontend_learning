@@ -42,6 +42,10 @@
         color: var(--color-orange);
         transition: var(--transition-base);
       }
+      &:focus{
+        color: var(--color-orange);
+        transition: var(--transition-base);
+      }
     }
   }
   &-logos{
@@ -50,7 +54,6 @@
     flex-direction: row;
     column-gap: 10px;
   }
-
   &--open{
     top: 0;
     bottom: 0;
