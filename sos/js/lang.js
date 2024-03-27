@@ -31,37 +31,6 @@ const LangArr = {
     },
 
 
-    "link-dialog-1": {
-        "RUS": "Главный",
-        "ENG": "Main",
-        "FRA": "Principal",
-        "DEU": "Hauptsächlich",
-    },
-    "link-dialog-2": {
-        "RUS": "о нас",
-        "ENG": "about",
-        "FRA": "à propos",
-        "DEU": "über uns",
-    },
-    "link-dialog-3": {
-        "RUS": "особенности игры",
-        "ENG": "game features",
-        "FRA": "caractéristiques de jeu",
-        "DEU": "Spielfunktionen",
-    },
-    "link-dialog-4": {
-        "RUS": "системные требования",
-        "ENG": "system requirements",
-        "FRA": "Configuration requise",
-        "DEU": "System Anforderungen",
-    },
-    "link-dialog-5": {
-        "RUS": "цитаты",
-        "ENG": "quotes",
-        "FRA": "devis",
-        "DEU": "Zitate",
-    },
-
     "title-1":{
         "RUS":"ВЫЖИТЬ ЛЮБОЙ ЦЕНОЙ",
         "ENG":"SURVIVE AT ALL COSTS",

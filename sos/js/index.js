@@ -78,8 +78,8 @@ function ChangeLanguage(){
 
         if (typeof option_ == "undefined") {
             for (let key in LangArr) {
-                let object = document.querySelector(".lng__" + key);
-                object.textContent = LangArr[key][lang];
+                let objects = document.querySelectorAll(".lng__" + key);
+                objects.forEach((object)=>{object.textContent = LangArr[key][lang]})
             }
         }
         else{
@@ -105,7 +105,6 @@ function ChangeLanguage(){
         window.history.pushState({path: newUrl.toString()}, '', newUrl.toString());
     }
 }
-
 function ButtonListenerClick(){
     dialog.classList.toggle("header__dialog--open");
 }
