@@ -1,0 +1,58 @@
+.header__dialog{
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+
+  bottom: 100%;
+  z-index: 1;
+  top: -100%;
+
+  transition: inset var(--transition-base);
+  &:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.75;
+    z-index: -1;
+    background: var(--color-black);
+  }
+
+  &-inner{
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &-links{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 15px;
+    flex: 1;
+
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.28;
+    a{
+      @include hover{
+        color: var(--color-orange);
+        transition: var(--transition-base);
+      }
+    }
+  }
+  &-logos{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+  }
+
+  &--open{
+    top: 0;
+    bottom: 0;
+  }
+}
