@@ -1,0 +1,116 @@
+.story{
+  background: url("/image/bg-5.png");
+  background-size: cover;
+  background-position: center;
+  &__inner{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-block: 50px;
+    gap: 40px;
+
+    height: var(--container-desktop-height);
+    @include tablet{
+      height: var(--container-table-height);
+      flex-direction: column;
+    }
+    @include mobile{
+      height: var(--container-mobile-height);
+    }
+  }
+  &__description{
+    color: var(--color-white);
+    &-little_title{
+      font-family: "Bebas Neue";
+      font-weight: 700;
+    }
+    &-large_title{
+      position: relative;
+      font-family: "Bebas Neue";
+      font-weight: 700;
+      &:after{
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--color-white);
+      }
+    }
+    &-paragraph{
+      margin-top: 20px;
+      font-family: "Open Sans";
+      @include fluid-text(18, 14)
+    }
+  }
+  &__swiper{
+    width: 100%;
+    height: 100%;
+    .swiper-wrapper{
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide{
+      width: 100%;
+      height: 100%;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .story-swiper-pagination {
+      position: absolute;
+      z-index: 100;
+      bottom: 25px !important;
+
+      width: auto !important;
+      left: calc(50% - 50px) !important;
+      display: flex;
+      gap: 3px;
+      .swiper-pagination-bullet {
+        background: initial;
+        width: 15px;
+        height: 15px;
+        border: 1px var(--color-white) solid;
+        opacity: 1;
+        &-active {
+          background: var(--color-white);
+        }
+      }
+    }
+    .swiper-button-prev{
+      left: 0 !important;
+      rotate: 180deg;
+      &:after{
+        content: "";
+      }
+    }
+    .swiper-button-next{
+      right: 0 !important;
+      &:after{
+        content: "";
+      }
+    }
+    .swiper-button-disabled{
+      opacity: 0 !important;
+    }
+  }
+  .swiper-container{
+    width: 500px;
+    height: 610px;
+    @include max-desktop{
+      width: calc(225px + 275 * ((100vw - 320px) / 1200));
+      height: calc(270px + 340 * ((100vw - 320px) / 1200));
+
+      margin-right: 50px;
+      padding-inline: 40px;
+    }
+    @include tablet{
+      margin-right: 0;
+      padding-inline: 0;
+    }
+  }
+}
