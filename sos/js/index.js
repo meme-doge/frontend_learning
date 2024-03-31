@@ -14,6 +14,48 @@ options.forEach((option) => {
 });
 select_change.addEventListener("keydown", ListListenerKeyDown);
 button.addEventListener("click", ButtonListenerClick);
+
+
+const all_option = document.querySelectorAll(".features__content-option");
+
+const first_option = document.querySelector(".option-first");
+const second_option = document.querySelector(".option-second");
+const third_option = document.querySelector(".option-third");
+
+
+first_option.onclick = FirstOption;
+second_option.onclick = SecondOption;
+third_option.onclick = ThirdOption;
+function FirstOption(event){
+    all_option.forEach((option)=>{
+        for (let count = 0; count<option.classList.length; count++){
+            if (option.classList[count] === "features__content-option--active"){
+                option.classList.remove("features__content-option--active");
+            }
+        }
+    })
+    first_option.classList.add("features__content-option--active")
+}
+function SecondOption(event){
+    all_option.forEach((option)=>{
+        for (let count = 0; count<option.classList.length; count++){
+            if (option.classList[count] === "features__content-option--active"){
+                option.classList.remove("features__content-option--active");
+            }
+        }
+    })
+    second_option.classList.add("features__content-option--active")
+}
+function ThirdOption(event){
+    all_option.forEach((option)=> {
+        for (let count = 0; count<option.classList.length; count++){
+            if (option.classList[count] === "features__content-option--active"){
+                option.classList.remove("features__content-option--active");
+            }
+        }
+    })
+    third_option.classList.add("features__content-option--active")
+}
 function ListListenerKeyDown(){
     if (event.keyCode === 13) {
         list.classList.toggle('display-lang');

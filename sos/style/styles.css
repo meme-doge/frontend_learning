@@ -248,17 +248,7 @@ h4 {
   left: 0;
   top: -100px;
   width: 100%;
-  height: calc(var(--container-desktop-height) + 100px);
-}
-@media (max-width: 1023px) {
-  .header .swiper-first {
-    height: calc(var(--container-table-height) + 100px);
-  }
-}
-@media (max-width: 767px) {
-  .header .swiper-first {
-    height: calc(var(--container-mobile-height) + 100px);
-  }
+  height: calc(100vh + 100px);
 }
 .header .swiper-first .swiper-slide {
   display: flex;
@@ -275,21 +265,11 @@ h4 {
   padding-bottom: 70px;
   text-transform: uppercase;
   color: var(--color-white);
-  height: var(--container-desktop-height);
-}
-@media (max-width: 1023px) {
-  .header__inner {
-    height: var(--container-table-height);
-  }
-}
-@media (max-width: 767px) {
-  .header__inner {
-    height: var(--container-mobile-height);
-  }
+  min-height: 100vh;
 }
 .header__menu {
   position: relative;
-  z-index: 2;
+  z-index: 101;
   display: flex;
   flex-direction: row;
   padding-top: 20px;
@@ -444,21 +424,25 @@ h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   flex-grow: 1;
 }
+.header__content-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .header__content-title {
-  text-align: center;
   font-family: "Bebas Neue";
-  margin-top: 237px;
   line-height: 1;
 }
 .header__content-subtitle {
-  text-align: center;
   font-family: "Bebas Neue";
   font-weight: 700;
   line-height: 1;
 }
 .header__content-button {
+  width: max-content;
   margin-top: 28.5px;
   color: var(--color-dark);
   font-weight: 700;
@@ -480,10 +464,12 @@ h4 {
   }
 }
 .header__content-bottom {
+  position: absolute;
+  content: "";
+  bottom: 20px;
   width: 100%;
   display: flex;
   flex-direction: row;
-  flex-grow: 1;
   align-items: flex-end;
 }
 @media (hover: none) {
@@ -619,13 +605,13 @@ h4 {
 }
 
 .header__dialog {
-  position: absolute;
+  position: fixed;
   content: "";
   left: 0;
   right: 0;
   bottom: 100%;
-  z-index: 1;
-  top: -100%;
+  z-index: 100;
+  top: -100vh;
   transition: inset var(--transition-base);
 }
 .header__dialog:after {
@@ -694,17 +680,11 @@ h4 {
   align-items: center;
   padding-block: 50px;
   gap: 40px;
-  height: var(--container-desktop-height);
+  min-height: 100vh;
 }
 @media (max-width: 1023px) {
   .story__inner {
-    height: var(--container-table-height);
     flex-direction: column;
-  }
-}
-@media (max-width: 767px) {
-  .story__inner {
-    height: var(--container-mobile-height);
   }
 }
 .story__description {
@@ -802,6 +782,90 @@ h4 {
     margin-right: 0;
     padding-inline: 0;
   }
+}
+
+.features {
+  background: url("/image/bg-2.png");
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.features__inner {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+.features__content {
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+}
+.features__content-little_title {
+  text-transform: uppercase;
+}
+.features__content-large_title {
+  text-transform: uppercase;
+}
+.features__content-options {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  overflow-y: clip;
+}
+.features__content-option {
+  position: relative;
+}
+.features__content-option-text {
+  overflow-y: clip;
+}
+.features__content-option-button {
+  padding: 0;
+  background: none;
+  border: none;
+  position: absolute;
+  left: -20px;
+  top: calc(clamp(21px, 3vw, 36px) / 2 - 7px);
+  width: 14px;
+  height: 14px;
+  border: 2px var(--color-white) solid;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.features__content-option-title {
+  font-family: "Bebas Neue";
+  font-weight: 700;
+  color: var(--color-orange);
+  cursor: pointer;
+}
+.features__content-option-paragraph {
+  max-height: 0;
+  transition: 0.3s;
+  max-width: 362.52px;
+}
+.features__content-option-paragraph-text {
+  font-size: clamp(14px, 1.5vw, 18px);
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.features__content-option--active .features__content-option-button {
+  background: var(--color-white) !important;
+}
+.features__content-option--active .features__content-option-text {
+  height: auto;
+}
+.features__content-option--active .features__content-option-paragraph {
+  max-height: 100vh;
+}
+.features__content-option--active:before {
+  position: absolute;
+  content: "";
+  top: calc((clamp(21px, 3vw, 36px) - 14px) / 2);
+  left: -14px;
+  height: calc(100% + 40px);
+  width: 2px;
+  background: var(--color-white);
 }
 
 /*# sourceMappingURL=styles.css.map */

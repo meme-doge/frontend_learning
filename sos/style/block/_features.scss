@@ -1,0 +1,90 @@
+.features {
+  background: url("/image/bg-2.png");
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &__inner{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  &__content{
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    &-little_title{
+      text-transform:  uppercase;
+    }
+    &-large_title{
+      text-transform:  uppercase;
+    }
+
+    &-options{
+      display: flex;
+      flex-direction: column;
+      row-gap: 40px;
+      overflow-y: clip;
+    }
+    &-option{
+      position: relative;
+      &-text{
+        overflow-y: clip;
+      }
+      &-button{
+        @include reset-button;
+        position: absolute;
+        left: -20px;
+        top: calc(((clamp(#{21}px,#{36 / 1200 * 100}vw,#{36}px))/2) - 7px);
+
+        width: 14px;
+        height: 14px;
+        border: 2px var(--color-white) solid;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      &-title{
+        font-family: "Bebas Neue";
+        font-weight: 700;
+        color: var(--color-orange);
+        cursor: pointer;
+      }
+      &-paragraph{
+        max-height: 0;
+        transition: 0.3s;
+        max-width: 362.52px;
+
+        &-text{
+          font-size: clamp(#{14}px,#{18 / 1200 * 100}vw,#{18}px);
+          padding-top: 20px;
+          padding-left: 20px;
+        }
+      }
+
+
+      &--active{
+        .features__content-option {
+          &-button {
+            background: var(--color-white) !important;
+          }
+          &-text{
+            height: auto;
+          }
+          &-paragraph{
+            max-height: 100vh;
+          }
+        }
+        &:before{
+          position: absolute;
+          content: "";
+          top: calc(((clamp(#{21}px,#{36 / 1200 * 100}vw,#{36}px)) - 14px) /2 );
+          left: calc(-20px + 7px - 1px);
+          height: calc(100% + 40px);
+          width: 2px;
+          background: var(--color-white);
+        }
+      }
+    }
+  }
+}
