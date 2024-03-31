@@ -27,35 +27,110 @@ first_option.onclick = FirstOption;
 second_option.onclick = SecondOption;
 third_option.onclick = ThirdOption;
 function FirstOption(event){
-    all_option.forEach((option)=>{
-        for (let count = 0; count<option.classList.length; count++){
-            if (option.classList[count] === "features__content-option--active"){
-                option.classList.remove("features__content-option--active");
+    let check = false;
+    event.target.classList.forEach( ( event_class) => {
+            if (event_class === "features__content-option-title" || event_class === "features__content-option-button"){
+                check = true;
             }
         }
-    })
-    first_option.classList.add("features__content-option--active")
+    )
+    if (check) {
+        all_option.forEach((option) => {
+            for (let count = 0; count < option.classList.length; count++) {
+                if (option.classList[count] === "features__content-option--active" && option !== first_option) {
+                    option.classList.remove("features__content-option--active");
+                }
+            }
+        })
+
+        let bool = false;
+        for (let count = 0; count < first_option.classList.length; count++) {
+            if (first_option.classList[count] === "features__content-option--active") {
+                bool = true;
+            }
+        }
+        if (bool) {
+            first_option.classList.remove("features__content-option--active")
+        } else {
+            first_option.classList.add("features__content-option--active")
+        }
+    }
 }
 function SecondOption(event){
-    all_option.forEach((option)=>{
-        for (let count = 0; count<option.classList.length; count++){
-            if (option.classList[count] === "features__content-option--active"){
-                option.classList.remove("features__content-option--active");
+    let check = false;
+    event.target.classList.forEach( ( event_class) => {
+            if (event_class === "features__content-option-title" || event_class === "features__content-option-button"){
+                check = true;
             }
         }
-    })
-    second_option.classList.add("features__content-option--active")
+    )
+    if (check) {
+        all_option.forEach((option)=>{
+            for (let count = 0; count<option.classList.length; count++){
+                if (option.classList[count] === "features__content-option--active" && option !== second_option){
+                    option.classList.remove("features__content-option--active");
+                }
+            }
+        })
+
+        let bool = false;
+        for (let count = 0; count < second_option.classList.length; count++) {
+            if (second_option.classList[count] === "features__content-option--active") {
+                bool = true;
+            }
+        }
+        if (bool){
+            second_option.classList.remove("features__content-option--active")
+        }
+        else {
+        second_option.classList.add("features__content-option--active")
+    }
+    }
 }
 function ThirdOption(event){
-    all_option.forEach((option)=> {
-        for (let count = 0; count<option.classList.length; count++){
-            if (option.classList[count] === "features__content-option--active"){
-                option.classList.remove("features__content-option--active");
+    let check = false;
+    event.target.classList.forEach( ( event_class) => {
+            if (event_class === "features__content-option-title" || event_class === "features__content-option-button"){
+                check = true;
             }
         }
-    })
-    third_option.classList.add("features__content-option--active")
+    )
+    if (check) {
+        all_option.forEach((option)=> {
+            for (let count = 0; count<option.classList.length; count++){
+                if (option.classList[count] === "features__content-option--active" && option !== third_option){
+                    option.classList.remove("features__content-option--active");
+                }
+            }
+        })
+
+        let bool = false;
+        for (let count = 0; count < third_option.classList.length; count++) {
+            if (third_option.classList[count] === "features__content-option--active") {
+                bool = true;
+            }
+        }
+        if (bool){
+            third_option.classList.remove("features__content-option--active")
+        }
+        else {
+        third_option.classList.add("features__content-option--active")
+    }
+    }
 }
+
+
+button.onclick = DialogClick;
+
+function DialogClick(event){
+    console.log(document.body.style.overflow);
+    if (document.body.style.overflow === "auto" || document.body.style.overflow === ""){
+        document.body.style.overflow = "hidden";
+    } else{
+        document.body.style.overflow = "auto";
+    }
+}
+
 function ListListenerKeyDown(){
     if (event.keyCode === 13) {
         list.classList.toggle('display-lang');
