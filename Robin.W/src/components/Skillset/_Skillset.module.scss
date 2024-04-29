@@ -1,0 +1,60 @@
+@import "/src/styles/styles";
+
+.skillset{
+  background-color: var(--color-base);
+  &__inner{
+    padding-block: var(--container-desktop-padding-y);
+    display: flex;
+    flex-direction: row;
+    @include tablet{
+      flex-direction: column;
+      padding-block: var(--container-tablet-padding-y);
+    }
+    @include mobile{
+      flex-direction: column;
+      padding-block: var(--container-mobile-padding-y);
+    }
+  }
+  &__text{
+    max-width: 416px;
+    &-title{
+
+    }
+    &-subtitle{
+      margin-top: 32px;
+      color:var(--color-deep-grey)
+    }
+  }
+  &__skills{
+    @include tablet-above{
+      margin-left: 24px;
+    }
+    @include tablet{
+      margin-top: 48px;
+    }
+    &-first{
+      display: flex;
+      column-gap: 24px;
+      @include mobile{
+        row-gap: 48px;
+        flex-direction: column;
+      }
+    }
+    &-twenty{
+      margin-top: 48px;
+      display: flex;
+      column-gap: 24px;
+      @include mobile{
+        row-gap: 48px;
+        flex-direction: column;
+      }
+    }
+
+    &-skill{
+      transition: var(--transition-base) linear;
+      @include hover{
+        scale: 101.5%;
+      }
+    }
+  }
+}

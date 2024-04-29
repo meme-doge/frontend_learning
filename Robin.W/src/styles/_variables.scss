@@ -1,0 +1,41 @@
+:root{
+  --color-base: #000000;
+  --color-level: #181823;
+  --color-light-grey: #DECCF9;
+  --color-dark-grey: #8491A0;
+  --color-deep-grey: #5B6876;
+  --color-text: #FFFFFF;
+  --color-primary: #5221E6;
+  --color-blue: #609BFF;
+  --color-green-accent: #3CC74E;
+  --color-pink-accent: #E95D90;
+  --color-peach-accent: #FFF3E4;
+  --color-violet-accent: #FBE4FF;
+
+  --font-size-label: 117px;
+
+  --font-size-h1: 78px;
+  --font-size-h2: 55px;
+  --font-size-h3: 24px;
+  --font-size-h4: 18px;
+  --font-size-h5: 16px;
+
+  --font-size-mobile-heading: 32px;
+  --font-size-overline: 16px;
+  --font-size-button: 18px;
+
+  --font-size-body-one: 18px;
+  --font-size-body-two: 16px;
+
+  //--container-width: 1360px;
+  --container-width: 1300px;
+
+  --container-padding-x: 40px;
+  --container-mobile-padding-x: 20px;
+
+  --container-desktop-padding-y: 120px;
+  --container-tablet-padding-y: 80px;
+  --container-mobile-padding-y: 48px;
+
+  --transition-base: .3s;
+}

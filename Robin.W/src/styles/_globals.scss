@@ -1,0 +1,37 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "Sen";
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+h1{
+  font-size: var(--font-size-h1);
+  font-weight: 700;
+  line-height: 93.84px;
+}
+h2{
+  font-size: var(--font-size-h2);
+  font-weight: 700;
+  line-height: 66.17px;
+}
+h3{
+  font-size: var(--font-size-h3);
+  font-weight: 700;
+  line-height: 36px;
+}
+h4{
+  font-size: var(--font-size-h4);
+  font-weight: 700;
+  line-height: 27px;
+}
+h5{
+  font-size: var(--font-size-h5);
+  font-weight: 700;
+  line-height: 24px;
+}
+img{
+
+  loading: lazy;
+}

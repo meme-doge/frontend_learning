@@ -1,0 +1,86 @@
+@import "src/styles/styles";
+.footer{
+  background-color: var(--color-level);
+  &__inner{
+    padding-block: var(--container-tablet-padding-y);
+    @include mobile{
+      padding-block: var(--container-mobile-padding-y);
+    }
+  }
+  &__wrapper{
+    display: flex;
+    flex-direction: row;
+    column-gap: 24px;
+    @include mobile{
+      flex-direction: column;
+    }
+  }
+
+  &__top{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  &__logo{
+    width: 130.72px;
+    height: 40px;
+  }
+  &__social{
+    display: flex;
+    column-gap: 16px;
+    margin-top: 32px;
+    &-net{
+      transition:var(--transition-base);
+      @include hover{
+        scale: 90%;
+      }
+      &-link{
+        @include reset-link;
+        color: #E94B88;
+      }
+    }
+    &-twitter{
+      transition:var(--transition-base);
+      @include hover{
+        scale: 90%;
+      }
+      &-link{
+        @include reset-link;
+        color: #26A7DE;
+      }
+    }
+    &-linked{
+      transition:var(--transition-base);
+      @include hover{
+        scale: 90%;
+      }
+      &-link{
+        @include reset-link;
+        color: #0077B5;
+      }
+    }
+  }
+  &__links{
+    display: flex;
+    flex-direction: column;
+    min-width: 15%;
+    &-link{
+      @include reset-link;
+      display: inline-block;
+      height: 48px;
+      @include hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  .links-list-first{
+    @include mobile{
+      margin-top: 48px;
+    }
+  }
+  &__copyright{
+    @include mobile{
+      margin-top: 48px;
+    }
+  }
+}

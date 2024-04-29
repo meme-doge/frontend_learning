@@ -1,0 +1,118 @@
+.container{
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline:auto;
+
+  padding-inline: var(--container-padding-x);
+  @include mobile{
+    padding-inline: var(--container-mobile-padding-x);
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+.hidden-mobile{
+  @include mobile{
+    display: none !important;
+  }
+}
+.visible-mobile{
+  @include mobile-above{
+    display: none !important;
+  }
+}
+
+//font- options
+
+.label{
+  font-size: 117px;
+  line-height: 140.77px;
+}
+.mobile-heading{
+  @include mobile{
+    font-size: var(--font-size-mobile-heading) !important;
+    line-height: 38.5px !important;
+  }
+}
+.overline{
+  font-size: var(--font-size-overline);
+  font-weight: 700;
+  line-height: 24px;
+
+  text-transform: uppercase;
+  color: var(--color-dark-grey);
+}
+.button{
+  text-transform: uppercase;
+  font-size: var(--font-size-button);
+  font-weight: 700;
+  line-height: 27px;
+}
+.body-one{
+  font-weight: 400;
+  font-size: var(--font-size-body-one);
+  line-height: 27px;
+}
+.body-two{
+  font-weight: 400;
+  font-size: var(--font-size-body-two);
+  line-height: 24px;
+}
+
+//underline-button
+
+
+.underline-link{
+  position: relative;
+  &:after{
+    position: absolute;
+    content: "";
+    transition: var(--transition-base) linear;
+
+    left: 0;
+    right: 0;
+    bottom: -4px;
+
+    height: 1px;
+    background-color: var(--color-dark-grey);
+  }
+  @include hover{
+    &:after{
+      position: absolute;
+      content: "";
+
+      left: 7.5px;
+      right: 7.5px;
+      bottom: -4px;
+
+      height: 2px;
+      background-color: var(--color-dark-grey);
+    }
+  }
+}
+
+//color-options
+.dark-grey{
+  color: var(--color-dark-grey);
+}
+.green{
+  color: var(--color-green-accent);
+}
+.blue{
+  color: var(--color-blue);
+}
+.pink{
+  color: var(--color-pink-accent);
+}
+.primary{
+  color: var(--color-primary);
+}

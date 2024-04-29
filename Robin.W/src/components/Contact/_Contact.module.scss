@@ -1,0 +1,105 @@
+@import "src/styles/styles";
+.contact{
+  background-color: var(--color-base);
+  &__inner{
+    padding-block: var(--container-desktop-padding-y);
+    @include tablet{
+      padding-block: var(--container-tablet-padding-y);
+      flex-direction: column;
+    }
+    @include mobile{
+      padding-block: var(--container-mobile-padding-y);
+    }
+  }
+  &__wrapper{
+    margin-inline: auto;
+    display: flex;
+    column-gap: 24px;
+    max-width: 1076px;
+    row-gap: 48px;
+    @include mobile{
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__text{
+    width: 50%;
+    max-width: 526px;
+
+    @include mobile{
+      width: 100%;
+      max-width: none;
+    }
+    &-title{}
+    &-subtitle{
+      margin-top: 24px;
+    }
+  }
+  &__form{
+    width: 50%;
+    max-width: 526px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    @include mobile{
+      width: 100%;
+      max-width: none;
+    }
+    &-name{
+      display: flex;
+      flex-direction: column;
+      &-input{
+        margin-top: 8px;
+        color: var(--color-text);
+        padding-inline: 20px;
+        padding-block: 20px;
+        min-height: 50px;
+        background-color: var(--color-level);
+        border: 0;
+        caret-color: var(--color-text);
+      }
+    }
+    &-email{
+      display: flex;
+      flex-direction: column;
+      &-input{
+        margin-top: 8px;
+        color: var(--color-text);
+        padding-inline: 20px;
+        padding-block: 20px;
+        min-height: 50px;
+        background-color: var(--color-level);
+        border: 0;
+        caret-color: var(--color-text);
+      }
+    }
+    &-message{
+      display: flex;
+      flex-direction: column;
+      &-input{
+        margin-top: 8px;
+        resize: none;
+        color: var(--color-text);
+        padding-inline: 20px;
+        padding-block: 20px;
+        min-height: 100px;
+        background-color: var(--color-level);
+        border: 0;
+        caret-color: var(--color-text);
+      }
+    }
+    &-button{
+      @include reset-button;
+      background-color: var(--color-primary);
+      color: var(--color-text);
+      padding-block: 24px;
+      transition: var(--transition-base);
+      @include hover{
+        scale: 99%;
+      }
+      &:active{
+        background-color: var(--color-blue);
+      }
+    }
+  }
+}

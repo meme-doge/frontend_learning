@@ -1,0 +1,55 @@
+@import "src/styles/styles";
+.instagram{
+  background-color: var(--color-peach-accent);
+  &__inner{
+    display: flex;
+    flex-direction: row;
+    padding-inline: 0;
+    @include mobile{
+      flex-direction: column;
+    }
+  }
+  &__text{
+    color: var(--color-base);
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding-inline: var(--container-padding-x);
+    padding-block: var(--container-desktop-padding-y);
+    @include tablet{
+      padding-block: var(--container-tablet-padding-y);
+    }
+    @include mobile{
+      width: auto;
+      padding-block: var(--container-mobile-padding-y);
+      padding-inline: var(--container-mobile-padding-x);
+    }
+
+    &-title{
+
+    }
+    &-subtitle{
+      flex-grow: 1;
+      margin-top: 24px;
+      color: var(--color-deep-grey)
+    }
+    &-link{
+      @include reset-link;
+      position: relative;
+      width: max-content;
+      margin-top: 90px;
+    }
+  }
+  &__img{
+    width: 50%;
+    object-fit: cover;
+    max-height: 600px;
+    @include mobile{
+      width: auto;
+      max-height: 450px;
+    }
+  }
+}

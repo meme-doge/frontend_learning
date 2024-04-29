@@ -1,0 +1,44 @@
+@import "/src/styles/styles";
+
+.experience{
+  background-color: var(--color-base);
+  .experience__inner{
+    padding-block: var(--container-desktop-padding-y);
+    @include tablet{
+      padding-block: var(--container-tablet-padding-y);
+    }
+    @include mobile{
+      padding-block: var(--container-mobile-padding-y);
+    }
+  }
+  .experience__title{
+    text-transform: uppercase;
+  }
+  .experience__subtitle{
+    max-width: 690px;
+    margin-top: 8px;
+    @include mobile{
+      max-width: 688px;
+    }
+  }
+
+  .experience__options{
+    display: flex;
+    flex-direction: row;
+    column-gap: 24px;
+    margin-top: 40px;
+    @include mobile{
+      max-width: 688px;
+      flex-direction: column;
+      row-gap: 40px;
+    }
+  }
+  .experience__option{
+    .label{
+      user-select: none;
+    }
+    &-description{
+      margin-top: 20px;
+    }
+  }
+}

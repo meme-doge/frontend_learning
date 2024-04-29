@@ -1,0 +1,73 @@
+@import "/src/styles/styles";
+
+.top{
+  position: relative;
+  background-color: var(--color-base);
+  &__inner{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding-right: var(--container-padding-x);
+    padding-left: 0;
+
+    padding-top: calc(80px + 88px); //add size to header section
+    padding-bottom: 80px;
+    @include mobile{
+      padding-right: 0;
+      padding-top: 72px;
+      flex-direction: column;
+    }
+    @include desktop-above{
+      &:after{
+        position: absolute;
+        content: "";
+        width: 62.5%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--color-level);
+        z-index: 1;
+      }
+    }
+  }
+  &__img{
+    object-fit: cover;
+    width: 53.5714285713%;
+    max-width: 750px;
+    height: 650px;
+
+    z-index: 2;
+
+    @include mobile{
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+    }
+  }
+  &__text{
+    position: relative;
+    left: -40px;
+    width: 52.7%;
+
+    z-index: 2;
+    @include mobile{
+      left: auto;
+      width: auto;
+      margin-top: 48px;
+      padding-inline: var(--container-mobile-padding-x);
+    }
+  }
+  &__title{
+    @include desktop{
+      font-size: var(--font-size-h2);
+      line-height: 66.17px;
+    }
+  }
+  &__paragraph{
+    margin-top: 32px;
+    @include mobile{
+      margin-top: 16px;
+    }
+  }
+}

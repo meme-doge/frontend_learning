@@ -1,0 +1,28 @@
+@import "src/styles/styles";
+
+.project{
+  @include reset-link;
+  transition: var(--transition-base) linear;
+  @include tablet{
+    max-width: 624px;
+  }
+  @include hover{
+    scale: 99.5%;
+  }
+  &__img{
+
+  }
+  &__text{
+    height: max-content;
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 13px;
+    background-color: var(--color-level);
+    &-title{
+
+    }
+    &-subtitle{
+    }
+  }
+}
